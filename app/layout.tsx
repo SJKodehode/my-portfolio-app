@@ -42,10 +42,10 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "brand-light" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className="container brand-light mx-auto max-w-7xl pt-16 flex-grow">
+            <main className="container light mx-auto max-w-7xl pt-16 flex-grow">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">
