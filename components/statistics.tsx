@@ -64,7 +64,7 @@ export function Statistics() {
   return (
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-6 text-center">
-        <span className={title({color: "violet", size: "lg"})}>/visualized</span>
+        <span className={title({color: "violet", size: "lg"})}>/ visualized</span>
 
         {/* GitHub Language Statistics */}
         
@@ -82,8 +82,8 @@ export function Statistics() {
                 {githubStats.map((stat, index) => (
                   <motion.div
                     key={stat.language}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     className="flex items-center justify-between"
@@ -144,20 +144,22 @@ export function Statistics() {
         {/* Projects Grid */}
         <h3 className={title({ size: 'xs'})}>Projects</h3>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6}}
+        viewport={{ once: true }}
+        
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           {projects.map((project, index) => (
-            <Card key={index}>
+            <Card key={index} className=''>
                 <CardBody>
 
 
-            <motion.div
+            <div
               key={project.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.2, delay: 0.1 * index }}
-              viewport={{ once: true }}
-              className="surface-elevated rounded-xl p-6 hover:glow-primary transition-all group"
-              
+
+              className="surface-elevated rounded-xl p-6 transition-all group"
               >
                   <div className="flex items-start justify-between mb-4">
                 <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -168,7 +170,7 @@ export function Statistics() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 flex items-center justify-center rounded-full surface hover:bg-primary hover:text-primary-foreground transition-colors"
+                    className="w-8 h-8 flex items-center justify-center rounded-full surface transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -179,7 +181,7 @@ export function Statistics() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 flex items-center justify-center rounded-full surface hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                      className="w-8 h-8 flex items-center justify-center rounded-full surface  transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       >
@@ -203,11 +205,11 @@ export function Statistics() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </CardBody>
             </Card>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
