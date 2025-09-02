@@ -7,7 +7,7 @@ export default function Projects() {
     return (
         <div className="text-center">
             <span className={title({color: "pink", size: "xxl"})}>/ </span>
-        <div className="flex flex-wrap gap-8 justify-center mt-20">
+        <div className="flex flex-wrap gap-8 justify-center mt-20 mx-6 sm:mx-auto">
             <ProjectCardWithTabs
           title="ergosmart-2"
           description="ErgoSmart 2.0 – A comprehensive ergonomic workspace solution with modern design and advanced features."
